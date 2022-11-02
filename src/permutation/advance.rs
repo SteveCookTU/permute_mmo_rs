@@ -1,6 +1,6 @@
 use crate::permutation::PermuteMeta;
-use crate::{permuter, SpawnState};
 use crate::util::calculations;
+use crate::{permuter, SpawnState};
 
 #[derive(Copy, Clone, Ord, PartialOrd, Eq, PartialEq, Debug)]
 #[repr(u8)]
@@ -97,7 +97,10 @@ impl Advance {
     }
 
     pub fn sequence_eq(a: &[Advance], b: &[Advance]) -> bool {
-        a.len() == b.len() && a.iter().zip(b.iter()).all(|(a, b)| a.advance_type == b.advance_type)
+        a.len() == b.len()
+            && a.iter()
+                .zip(b.iter())
+                .all(|(a, b)| a.advance_type == b.advance_type)
     }
 
     pub fn run_forwards(meta: &mut PermuteMeta, advances: &[Advance], seed: u64) -> Vec<SpawnStep> {
@@ -109,11 +112,11 @@ impl Advance {
         steps.push(SpawnStep {
             step: Advance {
                 advance_type: AdvanceType::RG,
-                raw: true
+                raw: true,
             },
             state,
             seed,
-            count_seed: meta.spawner.borrow().count.count_seed
+            count_seed: meta.spawner.borrow().count.count_seed,
         });
 
         for advance in advances {
@@ -130,7 +133,7 @@ impl Advance {
                     step: *advance,
                     state,
                     seed,
-                    count_seed: meta.spawner.borrow().count.count_seed
+                    count_seed: meta.spawner.borrow().count.count_seed,
                 })
             } else if advance.advance_type == AdvanceType::CR {
                 let mut next = None;
@@ -144,7 +147,7 @@ impl Advance {
                         step: *advance,
                         state,
                         seed,
-                        count_seed: meta.spawner.borrow().count.count_seed
+                        count_seed: meta.spawner.borrow().count.count_seed,
                     });
                 } else if advance.advance_type as usize >= AdvanceType::G1 as usize {
                     let count = advance.advance_count();
@@ -154,7 +157,7 @@ impl Advance {
                         step: *advance,
                         state,
                         seed,
-                        count_seed: meta.spawner.borrow().count.count_seed
+                        count_seed: meta.spawner.borrow().count.count_seed,
                     });
                     continue;
                 } else {
@@ -163,7 +166,7 @@ impl Advance {
                         step: *advance,
                         state,
                         seed,
-                        count_seed: meta.spawner.borrow().count.count_seed
+                        count_seed: meta.spawner.borrow().count.count_seed,
                     });
                 }
 
@@ -178,7 +181,7 @@ impl Advance {
                     },
                     state,
                     seed,
-                    count_seed: meta.spawner.borrow().count.count_seed
+                    count_seed: meta.spawner.borrow().count.count_seed,
                 })
             }
         }

@@ -1,5 +1,5 @@
 use crate::structure::MassiveOutbreakSpawner8a;
-use no_std_io::{Cursor, EndianRead, Error, Reader, ReadOutput, StreamContainer, StreamReader};
+use no_std_io::{Cursor, EndianRead, Error, ReadOutput, Reader, StreamContainer, StreamReader};
 use std::ops::Index;
 
 #[derive(Default, Copy, Clone, Debug)]

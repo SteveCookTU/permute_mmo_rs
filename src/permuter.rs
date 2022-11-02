@@ -183,7 +183,6 @@ fn generate_spawns(
     let mut oblivious = 0;
     let mut rng = Xoroshiro::new(seed);
     for i in 1..=count {
-
         let sub_seed = rng.next_u64();
         let alpha_seed = rng.next_u64();
 

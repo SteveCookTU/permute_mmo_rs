@@ -1,4 +1,4 @@
-use std::fmt::{Debug};
+use std::fmt::Debug;
 
 #[derive(Default, Copy, Clone, Debug)]
 pub struct SpawnState {

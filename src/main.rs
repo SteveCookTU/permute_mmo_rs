@@ -1,3 +1,4 @@
+use clap::Parser;
 use permute_mmo_rs::generation::EntityResult;
 use permute_mmo_rs::permutation::Advance;
 use permute_mmo_rs::permuter;
@@ -10,7 +11,6 @@ use pkhex_rs::game_strings::SPECIES_EN;
 use std::cell::RefCell;
 use std::rc::Rc;
 use sysbot_rs::SysBotClient;
-use clap::Parser;
 
 fn satisfy_criteria(entity: &EntityResult, _advances: &[Advance]) -> bool {
     entity.is_shiny
@@ -20,12 +20,16 @@ fn satisfy_criteria(entity: &EntityResult, _advances: &[Advance]) -> bool {
 struct PermuteMmo {
     #[arg(help = "IP of the switch you are connecting to")]
     ip: String,
-    #[arg(long, short, help = "Port to connect to on the switch. Default is 6000", default_value_t = 6000)]
+    #[arg(
+        long,
+        short,
+        help = "Port to connect to on the switch. Default is 6000",
+        default_value_t = 6000
+    )]
     port: u16,
 }
 
 fn main() {
-
     let args: PermuteMmo = PermuteMmo::parse();
 
     if let Ok(client) = SysBotClient::connect(&args.ip, args.port) {
