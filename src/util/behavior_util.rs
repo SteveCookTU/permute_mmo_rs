@@ -1,0 +1,83 @@
+use lazy_static::lazy_static;
+use pkhex_rs::Species;
+use std::collections::HashSet;
+
+lazy_static! {
+    pub static ref OBLIVIOUS: HashSet<u16> = {
+        let mut set = HashSet::new();
+        set.insert(Species::Cyndaquil as u16);
+        set.insert(Species::Hippopotas as u16);
+        set.insert(Species::Lickilicky as u16);
+        set.insert(Species::Lickitung as u16);
+        set.insert(Species::Magikarp as u16);
+        set.insert(Species::MrMime as u16);
+        set
+    };
+    pub static ref SKITTISH: HashSet<u16> = {
+        let mut set = HashSet::new();
+        set.insert(Species::Abra as u16);
+        set.insert(Species::Aipom as u16);
+        set.insert(Species::Basculin as u16);
+        set.insert(Species::Bidoof as u16);
+        set.insert(Species::Blissey as u16);
+        set.insert(Species::Bonsly as u16);
+        set.insert(Species::Budew as u16);
+        set.insert(Species::Buneary as u16);
+        set.insert(Species::Chansey as u16);
+        set.insert(Species::Chatot as u16);
+        set.insert(Species::Cherubi as u16);
+        set.insert(Species::Chimchar as u16);
+        set.insert(Species::Chimecho as u16);
+        set.insert(Species::Chingling as u16);
+        set.insert(Species::Clefairy as u16);
+        set.insert(Species::Cleffa as u16);
+        set.insert(Species::Combee as u16);
+        set.insert(Species::Eevee as u16);
+        set.insert(Species::Finneon as u16);
+        set.insert(Species::Froslass as u16);
+        set.insert(Species::Gardevoir as u16);
+        set.insert(Species::Glameow as u16);
+        set.insert(Species::Goomy as u16);
+        set.insert(Species::Happiny as u16);
+        set.insert(Species::Kirlia as u16);
+        set.insert(Species::Kricketot as u16);
+        set.insert(Species::Kricketune as u16);
+        set.insert(Species::Lickilicky as u16);
+        set.insert(Species::Lickitung as u16);
+        set.insert(Species::Lopunny as u16);
+        set.insert(Species::Lumineon as u16);
+        set.insert(Species::Magby as u16);
+        set.insert(Species::Magikarp as u16);
+        set.insert(Species::Mantine as u16);
+        set.insert(Species::Mantyke as u16);
+        set.insert(Species::MimeJr as u16);
+        set.insert(Species::Misdreavus as u16);
+        set.insert(Species::Mismagius as u16);
+        set.insert(Species::MrMime as u16);
+        set.insert(Species::Munchlax as u16);
+        set.insert(Species::Pachirisu as u16);
+        set.insert(Species::Petilil as u16);
+        set.insert(Species::Pichu as u16);
+        set.insert(Species::Piplup as u16);
+        set.insert(Species::Ponyta as u16);
+        set.insert(Species::Purugly as u16);
+        set.insert(Species::Ralts as u16);
+        set.insert(Species::Rowlet as u16);
+        set.insert(Species::Shellos as u16);
+        set.insert(Species::Sliggoo as u16);
+        set.insert(Species::Snorunt as u16);
+        set.insert(Species::Spheal as u16);
+        set.insert(Species::Stantler as u16);
+        set.insert(Species::Starly as u16);
+        set.insert(Species::Sudowoodo as u16);
+        set.insert(Species::Swinub as u16);
+        set.insert(Species::Teddiursa as u16);
+        set.insert(Species::Togepi as u16);
+        set.insert(Species::Togetic as u16);
+        set.insert(Species::Turtwig as u16);
+        set.insert(Species::Unown as u16);
+        set.insert(Species::Vulpix as u16);
+        set.insert(Species::Wurmple as u16);
+        set
+    };
+}
