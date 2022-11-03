@@ -103,14 +103,14 @@ impl SpawnInfo {
         }
     }
 
-    pub fn get_mo(table: u64, count: usize) -> Rc<Self> {
-        Rc::new(Self {
+    pub fn get_mo(table: u64, count: usize) -> Rc<RefCell<Self>> {
+        Rc::new(RefCell::new(Self {
             count: SpawnInfo::OUTBREAK,
             set: SpawnSet { table, count },
             spawn_type: SpawnType::Outbreak,
             parent: Weak::new(),
             next: None,
-        })
+        }))
     }
 
     pub fn get_loop(count: SpawnCount, set: SpawnSet, spawn_type: SpawnType) -> Rc<RefCell<Self>> {
