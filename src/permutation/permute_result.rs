@@ -53,7 +53,7 @@ impl PermuteResult {
         line
     }
 
-    fn get_wave_indicator(&self) -> String {
+    pub fn get_wave_indicator(&self) -> String {
         if !self.is_bonus() {
             "      ".to_string()
         } else {
@@ -95,7 +95,7 @@ impl PermuteResult {
         }
     }
 
-    fn get_feasibility(&self, advances: &[Advance]) -> &'static str {
+    pub fn get_feasibility(&self, advances: &[Advance]) -> &'static str {
         if advances.iter().any(Advance::is_multi_scare) {
             if advances.iter().any(Advance::is_multi_beta) {
                 return " -- Skittish: Multi scaring with aggressive!";

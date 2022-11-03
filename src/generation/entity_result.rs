@@ -98,7 +98,7 @@ impl EntityResult {
         lines
     }
 
-    fn get_shiny_str(&self) -> String {
+    pub fn get_shiny_str(&self) -> String {
         if self.is_shiny {
             format!(
                 " {:2} {}",
