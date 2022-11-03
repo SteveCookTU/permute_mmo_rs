@@ -63,7 +63,7 @@ impl PermuteMeta {
         lines
     }
 
-    fn has_child_chain(&self, mut index: usize, parent: &[Advance]) -> bool {
+    pub fn has_child_chain(&self, mut index: usize, parent: &[Advance]) -> bool {
         index += 1;
         if index >= self.results.len() {
             false
@@ -72,7 +72,7 @@ impl PermuteMeta {
         }
     }
 
-    fn is_action_multi_result(&self, index: usize, child: &[Advance]) -> bool {
+    pub fn is_action_multi_result(&self, index: usize, child: &[Advance]) -> bool {
         let mut count = 0;
         for result in self.results.iter().take(index).rev() {
             if Advance::sequence_eq(&result.advances, child) {
@@ -93,7 +93,7 @@ impl PermuteMeta {
         count != 0
     }
 
-    fn find_nearest_parent_advance_result(
+    pub fn find_nearest_parent_advance_result(
         &self,
         index: usize,
         child: &[Advance],
