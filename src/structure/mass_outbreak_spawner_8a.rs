@@ -10,7 +10,7 @@ pub struct MassOutbreakSpawner8a {
     pub x: f32,
     pub y: f32,
     pub z: f32,
-    #[no_std_io(pad_before = 8)]
+    #[no_std_io(pad_before = 4)]
     pub count_seed: u64,
     pub group_seed: u64,
     pub base_count: u8,
